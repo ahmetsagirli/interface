@@ -24,10 +24,10 @@ export interface UiFeeParams {
 }
 
 export const uiFeeParams$ = new BehaviorSubject<UiFeeParams>({
-  address: '9fdmUutc4DhcqXAAyQeBTsw49PjEM4vuW9riQCHtXAoGEw3R11d',
-  minUiFee: 0.3,
-  uiFeePercent: 3,
-  uiFeeThreshold: 30,
+  address: '9ezYsQ5H4KKZXHtfQHwZRLwstdB9tMKHtQPXHyLXAoX5pRnfKFN',
+  minUiFee: 0,
+  uiFeePercent: 0,
+  uiFeeThreshold: 0,
 });
 
 const _calculateUiFee = (
@@ -47,7 +47,7 @@ const _calculateUiFee = (
   if (inputInErg.lte(feeThresholdInErg)) {
     return minUiFeeInErg;
   }
-  const uiFeeInErg = inputInErg.percent(0.3);
+  const uiFeeInErg = inputInErg.percent(0);
 
   return uiFeeInErg.gte(minUiFeeInErg) ? uiFeeInErg : minUiFeeInErg;
 };
