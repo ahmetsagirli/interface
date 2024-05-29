@@ -2,7 +2,7 @@ export const isProductionEnv = (): boolean =>
   import.meta.env.NODE_ENV === 'production';
 
 export const getSentryEnv = (): string => {
-  if (location.host === 'app.spectrum.fi') {
+  if (location.host === 'zerodex.vercel.app') {
     return 'production';
   }
   if (location.host === 'test.spectrum.fi') {
