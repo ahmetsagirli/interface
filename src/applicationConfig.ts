@@ -4,7 +4,7 @@ import { Dictionary } from './common/utils/Dictionary';
 import { isProductionEnv } from './common/utils/env';
 import { DefaultTokenListItem } from './network/cardano/api/common/defaultTokenList.ts';
 
-const isProductionHost = 'app.spectrum.fi' === location.host;
+const isProductionHost = 'zerodex.vercel.app' === location.host;
 
 interface OperationRestriction {
   readonly asset: string;
