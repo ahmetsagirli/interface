@@ -79,7 +79,6 @@ import { PriceImpactWarning } from './PriceImpactWarning/PriceImpactWarning';
 import { SwapFormModel } from './SwapFormModel';
 import { SwapGraph } from './SwapGraph/SwapGraph';
 import { SwitchButton } from './SwitchButton/SwitchButton';
-import { YieldFarmingBadge } from './YieldFarmingBadge/YieldFarmingBadge';
 
 const swapParamsCache$ = new BehaviorSubject<
   | undefined
