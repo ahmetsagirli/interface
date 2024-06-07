@@ -16,7 +16,6 @@ import { useSubscription } from '../../../common/hooks/useObservable';
 import { useSelectedNetwork } from '../../../gateway/common/network';
 import { openCookiePolicy } from '../../../services/notifications/CookiePolicy/CookiePolicy';
 import { NetworkHeight } from '../../NetworkHeight/NetworkHeight';
-import { SocialLinks } from '../../SocialLinks/SocialLinks';
 import { CardanoUpdate } from './CardanoUpdate/CardanoUpdate';
 import { FooterNavigation } from './FooterNavigation/FooterNavigation';
 import { Header } from './Header/Header';
@@ -88,7 +87,6 @@ const _Layout: FC<PropsWithChildren<{ className?: string }>> = ({
             {children}
           </MainContainer>
           <footer>
-            {/* <SocialLinks /> */}
             <NetworkHeight />
           </footer>
           <FooterNavigation ref={footerRef} />
