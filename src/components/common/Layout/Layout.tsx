@@ -88,7 +88,7 @@ const _Layout: FC<PropsWithChildren<{ className?: string }>> = ({
             {children}
           </MainContainer>
           <footer>
-            <SocialLinks />
+            {/* <SocialLinks /> */}
             <NetworkHeight />
           </footer>
           <FooterNavigation ref={footerRef} />
