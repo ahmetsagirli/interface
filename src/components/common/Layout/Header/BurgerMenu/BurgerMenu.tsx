@@ -1,14 +1,10 @@
 import {
   Button,
   Dropdown,
-  FileTextOutlined,
-  GithubOutlined,
   GlobalOutlined,
-  InfoCircleOutlined,
   LeftOutlined,
   Menu,
   Modal,
-  QuestionCircleOutlined,
   ReloadOutlined,
   RightOutlined,
 } from '@ergolabs/ui-kit';
