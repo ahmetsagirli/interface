@@ -1,9 +1,5 @@
 import {
-  Button,
-  DownOutlined,
-  Dropdown,
   Flex,
-  Menu,
   Tabs,
   Typography,
 } from '@ergolabs/ui-kit';
