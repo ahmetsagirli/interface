@@ -101,13 +101,13 @@ export const ThemeSwitch: FC = () => {
             <Tabs.TabPane tab={t`System`} key="system" />
           </Tabs>
         </Flex.Item>
-        <Flex.Item align="center">
+        {/* <Flex.Item align="center">
           <Dropdown overlay={<DropdownOverlay />}>
             <Button block size="small">
               Meme theme <DownOutlined />
             </Button>
           </Dropdown>
-        </Flex.Item>
+        </Flex.Item> */}
       </Flex>
     </Flex>
   );
