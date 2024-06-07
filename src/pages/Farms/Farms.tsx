@@ -70,7 +70,7 @@ export const Farms = (): JSX.Element => {
   return (
     <Page maxWidth={1110} padding={0} transparent>
       <Flex col>
-        <Flex.Item marginBottom={6}>
+        <Flex.Item marginBottom={6} display="none">
           <FarmGuides />
         </Flex.Item>
         <Flex.Item marginBottom={6}>

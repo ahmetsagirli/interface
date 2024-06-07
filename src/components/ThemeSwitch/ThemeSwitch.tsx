@@ -101,7 +101,7 @@ export const ThemeSwitch: FC = () => {
             <Tabs.TabPane tab={t`System`} key="system" />
           </Tabs>
         </Flex.Item>
-        <Flex.Item align="center">
+        <Flex.Item align="center" display="none">
           <Dropdown overlay={<DropdownOverlay />}>
             <Button block size="small">
               Meme theme <DownOutlined />
