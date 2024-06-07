@@ -30,7 +30,7 @@ export const SUPPORTED_LOCALES = [
   // 'sr-SP',
   // 'sv-SE',
   // 'sw-TZ',
-  // 'tr-TR',
+  'tr-TR',
   // 'uk-UA',
   // 'vi-VN',
 ];
@@ -70,7 +70,7 @@ export const LOCALE_LABEL: { [locale in SupportedLocale]: string } = {
   // 'sr-SP': 'Српски',
   // 'sv-SE': 'svenska',
   // 'sw-TZ': 'Kiswahili',
-  // 'tr-TR': 'Türkçe',
+  'tr-TR': 'Türkçe',
   // 'uk-UA': 'Український',
   // 'vi-VN': 'Tiếng Việt',
 };
