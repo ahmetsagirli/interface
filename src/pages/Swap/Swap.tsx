@@ -79,6 +79,7 @@ import { PriceImpactWarning } from './PriceImpactWarning/PriceImpactWarning';
 import { SwapFormModel } from './SwapFormModel';
 import { SwapGraph } from './SwapGraph/SwapGraph';
 import { SwitchButton } from './SwitchButton/SwitchButton';
+import { YieldFarmingBadge } from './YieldFarmingBadge/YieldFarmingBadge';
 
 const swapParamsCache$ = new BehaviorSubject<
   | undefined
@@ -476,6 +477,7 @@ export const Swap = (): JSX.Element => {
       widgetBaseHeight={pool ? 432 : 272}
       footer={
         <IsErgo>
+          <YieldFarmingBadge />
         </IsErgo>
       }
       leftWidget={

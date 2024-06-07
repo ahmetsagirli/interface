@@ -58,6 +58,7 @@ const _YieldFarmingBadge: FC<{ className?: string }> = ({ className }) => {
 };
 
 export const YieldFarmingBadge = styled(_YieldFarmingBadge)`
+  display: none;
   background: var(--spectrum-yield-farming-badge-background) !important;
   overflow: hidden;
   position: relative;
