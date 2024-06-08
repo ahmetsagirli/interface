@@ -97,7 +97,6 @@ const BurgerMenu = (): JSX.Element => {
           item && (
             <OtherMenuItem key={index + 1} icon={item.icon}>
               <a
-                href={item.link}
                 rel="noreferrer"
                 target={item.link ? '_blank' : ''}
                 onClick={item.onClick}
