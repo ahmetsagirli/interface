@@ -133,7 +133,7 @@ export const applicationConfig: ApplicationConfig = {
     },
     ergo: {
       name: 'ergo',
-      defaultTokenListUrl: 'https://spectrum.fi/ergo-token-list.json',
+      defaultTokenListUrl: 'https://www.ergdex.com/ergo-token-list.json',
       lbspWhitelistUrl: '',
       metadataUrl: 'https://spectrum.fi/logos/ergo',
       spfFaucet: 'https://airdrop.spectrum.fi/v1/faucet/',
