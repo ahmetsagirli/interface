@@ -93,7 +93,7 @@ const BurgerMenu = (): JSX.Element => {
         <ThemeSwitch />
       </ThemeSwitchContainer>
       {menu.map(
-        (item, index) =>
+        (item: { title: string; icon: JSX.Element; onClick: () => void; additional?: JSX.Element; link?: string }, index) =>
           item && (
             <OtherMenuItem key={index + 1} icon={item.icon}>
               <a
