@@ -3,6 +3,11 @@
 
 .system {
   @media (prefers-color-scheme: light) {
+
+    --spectrum-primary-color: #000 !important;
+    --spectrum-primary-color-hover: #2b2b2b !important;
+    --spectrum-glow-gradient: transparent !important;
+    
     .lightTheme();
     --spectrum-glow-image: url("../../images/glow-v3.jpg");
     --spectrum-glow-image-width: 689px;
@@ -25,6 +30,11 @@
 
   @media (prefers-color-scheme: dark) {
     .darkTheme();
+
+    --spectrum-primary-color: #000 !important;
+    --spectrum-primary-color-hover: #2b2b2b !important;
+    --spectrum-glow-gradient: transparent !important;
+
     --spectrum-glow-image: url("../../images/glow-v3.jpg");
     --spectrum-glow-image-width: 689px;
     --spectrum-logo-color: var(--spectrum-primary-text);
@@ -41,7 +51,6 @@
     --spectrum-claim-spf-box-border-color: #635ca4;
     --spectrum-lbsp-banner-background-color: linear-gradient(270.73deg, #362f52 0%, #130c3a 100%);
     --spectrum-network-select-item-overlay-opacity: 0.35;
-    --spectrum-primary-color: red;
   }
 }
 
