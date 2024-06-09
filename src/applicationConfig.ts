@@ -75,7 +75,7 @@ export const applicationConfig: ApplicationConfig = {
   spfUsdRateUrl: 'https://api.spectrum.fi/v1/price-tracking/spf/price',
   operationTimeoutTime: 60_000,
   cookieDomain: isProductionEnv() ? 'spectrum.fi' : undefined,
-  cardanoMaintenance: false,
+  cardanoMaintenance: true,
   // cardanoUpdate: {
   //   title: 'On the way to the mainnet',
   //   content: 'The Cardano AMM protocol will be available in mainnet soon',
@@ -147,7 +147,7 @@ export const applicationConfig: ApplicationConfig = {
     },
   },
   social: {
-    twitter: 'https://twitter.com/spectrumlabs_',
+    twitter: 'https://x.com/ergdex',
     telegram: 'https://t.me/spectrum_labs_community',
     discord: 'https://discord.com/invite/zY2gmTYQVD',
     medium: 'https://spectrumlabs.medium.com',
