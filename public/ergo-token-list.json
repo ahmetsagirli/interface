@@ -276,6 +276,15 @@
       "logoURI": "https://gateway.pinata.cloud/ipfs/QmZkB935jDaHrBnCtzSAiX8zgt9LaxGcLtLSQfYs2tCqbB",
       "project": "Walrus DAO",
       "description": "Memecoin of the Ergo ecosystem"
+    },
+    {
+      "address": "af1a2e8005f6ffc9e291e121d1fb08795c5a079409b8ca56e20eb2f4f6f8553b",
+      "decimals": 0,
+      "name": "🐶",
+      "ticker": "🐶",
+      "logoURI": "",
+      "project": "🐶",
+      "description": ""
     }
   ]
 }
