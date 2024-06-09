@@ -45,7 +45,7 @@
       "decimals": 4,
       "name": "Auction House",
       "ticker": "AHT",
-      "logoURI": "https://ipfs.io/ipfs/bafkreifehzky75luj77t75kn757bshlvpxo24ith26dexkkmbw3hkx247y",
+      "logoURI": "https://raw.githubusercontent.com/spectrum-finance/token-logos/master/logos/ergo/52f4544ce8a420d484ece16f9b984d81c23e46971ef5e37c29382ac50f80d5bd.svg?RAqOKVCzjG",
       "description": "The first open-source NFT marketplace on the Ergo blockchain"
     },
     {
@@ -265,7 +265,7 @@
       "decimals": 4,
       "name": "Swamp Audio",
       "ticker": "Terahertz",
-      "logoURI": "https://raw.githubusercontent.com/ergolabs/ergo-dex-asset-icons/master/light/02f31739e2e4937bb9afb552943753d1e3e9cdd1a5e5661949cb0cef93f907ea.svg",
+      "logoURI": "https://raw.githubusercontent.com/spectrum-finance/token-logos/master/logos/ergo/02f31739e2e4937bb9afb552943753d1e3e9cdd1a5e5661949cb0cef93f907ea.svg",
       "description": "A layer 1 on chain royalty management platform and DAO media publisher whose main focus is building better tools to connect fans and artists globally."
     },
     {
