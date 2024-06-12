@@ -288,12 +288,12 @@
     },
     {
       "address": "843b5a2a0658550339c38f29827861fe459ce5206edaf17163113cccafc77af1",
-      "decimals": 0,
+      "decimals": 6,
       "name": "Glizzy Wif Hat",
       "ticker": "GIF",
       "logoURI": "https://ergexplorer.com/images/tokens/glizzy.png",
       "project": "GIF",
-      "description": ""
+      "description": "Glizzy Wif Hat"
     }
   ]
 }
