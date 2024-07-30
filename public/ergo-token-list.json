@@ -302,6 +302,15 @@
       "logoURI": "https://ergexplorer.com/images/tokens/glizzy.png",
       "project": "GIF",
       "description": "Glizzy Wif Hat"
+    },
+    {
+      "address": "24c380b40c934db2273affc782e091df28c965f1e513f8f5f09fc1d12646ecf2",
+      "decimals": 2,
+      "name": "OINK",
+      "ticker": "OINK",
+      "logoURI": "https://ergexplorer.com/images/tokens/OINK.png",
+      "project": "OINK",
+      "description": "Oink, oink!"
     }
   ]
 }
