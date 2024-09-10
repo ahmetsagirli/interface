@@ -311,6 +311,33 @@
       "logoURI": "https://ergexplorer.com/images/tokens/OINK.png",
       "project": "OINK",
       "description": "Oink, oink!"
+    },
+    {
+      "address": "24c380b40c934db2273affc782e091df28c965f1e513f8f5f09fc1d12646ecf2",
+      "decimals": 9,
+      "name": "GluonW GAUC",
+      "ticker": "GAUC",
+      "logoURI": "https://ergexplorer.com/images/tokens/gauc.svg",
+      "project": "GAUC",
+      "description": "GluonW GAUC Protons by DJed Alliance v1"
+    },
+    {
+      "address": "886b7721bef42f60c6317d37d8752da8aca01898cae7dae61808c4a14225edc8",
+      "decimals": 9,
+      "name": "GluonW GAU",
+      "ticker": "GAU",
+      "logoURI": "https://ergexplorer.com/images/tokens/gau.svg",
+      "project": "GAU",
+      "description": "GluonW GAU Neutrons by DJed Alliance v1"
+    },
+    {
+      "address": "6fd53a3b6baa760a91af9f5ceb4200e9d3c23548b2df89333adede65a272c893",
+      "decimals": 5,
+      "name": "heisenbERG",
+      "ticker": "heisenbERG",
+      "logoURI": "https://ergexplorer.com/images/tokens/heisenberg.png",
+      "project": "heisenbERG",
+      "description": "Ergo's Walter White Themed Memecoin."
     }
   ]
 }
