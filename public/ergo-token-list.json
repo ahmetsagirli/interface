@@ -338,6 +338,15 @@
       "logoURI": "https://ergexplorer.com/images/tokens/heisenberg.png",
       "project": "heisenbERG",
       "description": "Ergo's Walter White Themed Memecoin."
+    },
+    {
+      "address": "6c35aa395c7c75b0f67f7804d6930f0e11ef93c3387dc1faa86498d54af7962c",
+      "decimals": 2,
+      "name": "MEW",
+      "ticker": "MEW",
+      "logoURI": "https://ergexplorer.com/images/tokens/mew.png",
+      "project": "MEW Finance",
+      "description": "The official utility token of MEW Finance"
     }
   ]
 }
