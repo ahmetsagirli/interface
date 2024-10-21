@@ -347,6 +347,15 @@
       "logoURI": "https://ergexplorer.com/images/tokens/mew.png",
       "project": "MEW Finance",
       "description": "The official utility token of MEW Finance"
+    },
+    {
+      "address": "203ef3066a912f35c488487cc2cb94bdb0d30680dab22551c7e6fdbc70dfcc8e",
+      "decimals": 9,
+      "name": "rsETH",
+      "ticker": "rsETH",
+      "logoURI": "https://cryptologos.cc/logos/ethereum-eth-logo.png",
+      "project": "Rosen Bridge wrapped ETH",
+      "description": "Rosen Bridge wrapped ETH"
     }
   ]
 }
