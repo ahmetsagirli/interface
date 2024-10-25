@@ -383,6 +383,15 @@
       "logoURI": "https://storage.googleapis.com/dexhunter-images/tokens/da8c30857834c6ae7203935b89278c532b3995245295456f993e1d244c51.webp",
       "project": "Rosen Bridge wrapped LQ",
       "description": "Rosen Bridge wrapped LQ"
+    },
+    {
+      "address": "61cc58234c2c585b6075b2b929cce0e206ba4894021d6c4d563af0c9180f3cb1",
+      "decimals": 3,
+      "name": "MOODENG",
+      "ticker": "MOODENG",
+      "logoURI": "https://assets.coingecko.com/coins/images/50264/standard/MOODENG.jpg",
+      "project": "Moo Deng",
+      "description": "Moo Deng Meme"
     }
   ]
 }
