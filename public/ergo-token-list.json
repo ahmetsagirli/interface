@@ -385,6 +385,15 @@
       "description": "Rosen Bridge wrapped LQ"
     },
     {
+      "address": "6a2bbb9b1a882018f1f15c18c3c654121044a7072b0b7e464f852e149e315eef",
+      "decimals": 9,
+      "name": "rsBNB",
+      "ticker": "rsBNB",
+      "logoURI": "https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/512/Binance-Coin-BNB-icon.png",
+      "project": "Rosen Bridge wrapped BNB",
+      "description": "Rosen Bridge wrapped BNB"
+    },
+    {
       "address": "61cc58234c2c585b6075b2b929cce0e206ba4894021d6c4d563af0c9180f3cb1",
       "decimals": 3,
       "name": "MOODENG",
