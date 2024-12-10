@@ -437,6 +437,33 @@
       "logoURI": "https://emojigraph.org/media/apple/clown-face_1f921.png",
       "project": "🤡",
       "description": "Official 🤡 token"
+    },
+    {
+      "address": "7c788b124df40d5ab4d4c428dd7a1290b5b8579da4e8cbddeea060b1671312da",
+      "decimals": 3,
+      "name": "Pumperino",
+      "ticker": "PUMP",
+      "logoURI": "https://images.playground.com/57c074df4ead4c1eb8faaba2ca62f46f.jpeg",
+      "project": "Pumperino",
+      "description": "It pamps!"
+    },
+    {
+      "address": "1f649a7560f9d1b697d4225c57c9040c9101e4181dae134541ee8afec92944c5",
+      "decimals": 0,
+      "name": "catWITHbat",
+      "ticker": "catWITHbat",
+      "logoURI": "https://api.ergexplorer.com/nftcache/bafkreicxoj4b4s5qbrf5sghfowpopagdkkzwq7z5kqxkyeu2vs5fqcchv4.png",
+      "project": "catWITHbat",
+      "description": "Introducing the latest sensation in the wild world of NFTs: Cat with a bat!"
+    },
+    {
+      "address": "fbbaac7337d051c10fc3da0ccb864f4d32d40027551e1c3ea3ce361f39b91e40",
+      "decimals": 0,
+      "name": "kushti",
+      "ticker": "kushti",
+      "logoURI": "https://spectrum.fi/logos/ergo/fbbaac7337d051c10fc3da0ccb864f4d32d40027551e1c3ea3ce361f39b91e40.svg",
+      "project": "kushti",
+      "description": "A token to support and memorialize nanoergs."
     }
   ]
 }
