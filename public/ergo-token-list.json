@@ -401,6 +401,42 @@
       "logoURI": "https://assets.coingecko.com/coins/images/50264/standard/MOODENG.jpg",
       "project": "Moo Deng",
       "description": "Moo Deng Meme"
+    },
+    {
+      "address": "3fba7e9e77350709a1aeddd0c47ad7f7675e16cb06bd19264cecf49d16d4368f",
+      "decimals": 2,
+      "name": "PJs",
+      "ticker": "PJs",
+      "logoURI": "https://raw.githubusercontent.com/PJs-Token/Pyjamas/refs/heads/main/assets/pjs_256x256.png",
+      "project": "PJs",
+      "description": "Pyjama Pants"
+    },
+    {
+      "address": "ebb40ecab7bb7d2a935024100806db04f44c62c33ae9756cf6fc4cb6b9aa2d12",
+      "decimals": 0,
+      "name": "🚬",
+      "ticker": "🚬",
+      "logoURI": "https://raw.githubusercontent.com/PJs-Token/Pyjamas/refs/heads/main/assets/pjs_256x256.png",
+      "project": "🚬",
+      "description": "Cigmanaut Token"
+    },
+    {
+      "address": "0779ec04f2fae64e87418a1ad917639d4668f78484f45df962b0dec14a2591d2",
+      "decimals": 0,
+      "name": "Mi Goreng",
+      "ticker": "Mi Goreng",
+      "logoURI": "https://spectrum.fi/logos/ergo/0779ec04f2fae64e87418a1ad917639d4668f78484f45df962b0dec14a2591d2.svg",
+      "project": "Mi Goreng",
+      "description": "The most delicious, delectable, palatable feast that one can ever enjoy."
+    },
+    {
+      "address": "bd0c25c373ad606d78412ae1198133f4573b4e4c2d4ed3fc4c2a4547c6c6e12e",
+      "decimals": 3,
+      "name": "🤡",
+      "ticker": "🤡",
+      "logoURI": "https://emojigraph.org/media/apple/clown-face_1f921.png",
+      "project": "🤡",
+      "description": "Official 🤡 token"
     }
   ]
 }
