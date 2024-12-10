@@ -164,7 +164,7 @@
       "decimals": 9,
       "name": "hodlERG3",
       "ticker": "hodlERG3",
-      "logoURI": "https://media.discordapp.net/attachments/1138798943803809792/1139177368704008222/HODL-8-1.png",
+      "logoURI": "https://spectrum.fi/logos/ergo/cbd75cfe1a4f37f9a22eaee516300e36ea82017073036f07a09c1d2e10277cda.svg",
       "project": "hodlERG 3%"
     },
     {
@@ -464,6 +464,42 @@
       "logoURI": "https://spectrum.fi/logos/ergo/fbbaac7337d051c10fc3da0ccb864f4d32d40027551e1c3ea3ce361f39b91e40.svg",
       "project": "kushti",
       "description": "A token to support and memorialize nanoergs."
+    },
+    {
+      "address": "f0d5bdf474fcbd4249608e6dc6e9cf34a327b218f66445ea545b4c711b4676e3",
+      "decimals": 0,
+      "name": "Cup of Sugar",
+      "ticker": "COS",
+      "logoURI": "https://cupofsugar.io/icon.png",
+      "project": "Cup of Sugar",
+      "description": "Cup of Sugar utility token - visit cupofsugar.io for more details"
+    },
+    {
+      "address": "012c74dcd0920ce0c3f9f3945d509ea07b33872f3f144b816bcd7b664b22d5b3",
+      "decimals": 0,
+      "name": "Troll",
+      "ticker": "Troll",
+      "logoURI": "https://bafybeihuet24oa6zr25cfdxvu22wqnuummm4vjmd4lmxz2xmkqoowawtyy.ipfs.nftstorage.link/",
+      "project": "Troll",
+      "description": "Rosen Trolls cross-chain token"
+    },
+    {
+      "address": "f0cac602d618081f46db086726d3c4da53006b646b50e382989054dcf3c93bd8",
+      "decimals": 2,
+      "name": "FAKU",
+      "ticker": "FAKU",
+      "logoURI": "https://cupofsugar.io/fakulogo.png",
+      "project": "FAKU",
+      "description": "Unstoppable Meme Token on Ergo. Built for war... FAKU HUMANS!"
+    },
+    {
+      "address": "8e8dd3b13d12485cdc599977e4a2a537a519c5db0c08649c55b5181e0294cdae",
+      "decimals": 3,
+      "name": "Holderino",
+      "ticker": "HOLD",
+      "logoURI": "https://images.playground.com/57c074df4ead4c1eb8faaba2ca62f46f.jpeg",
+      "project": "Holderino",
+      "description": "Its Holderino!"
     }
   ]
 }
