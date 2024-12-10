@@ -500,6 +500,15 @@
       "logoURI": "https://images.playground.com/57c074df4ead4c1eb8faaba2ca62f46f.jpeg",
       "project": "Holderino",
       "description": "Its Holderino!"
+    },
+    {
+      "address": "556598b2ca017610a0c5911f1eb1185f1d5a539287979730394d291dbd87186f",
+      "decimals": 0,
+      "name": "rsSUGAR",
+      "ticker": "rsSUGAR",
+      "logoURI": "https://assets.coingecko.com/coins/images/52099/standard/sugarsquare.jpg",
+      "project": "Rosen Bridge wrapped SUGAR BUSH",
+      "description": "Rosen Bridge wrapped SUGAR BUSH"
     }
   ]
 }
