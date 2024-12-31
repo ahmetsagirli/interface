@@ -518,6 +518,15 @@
       "logoURI": "",
       "project": "Philippine Pesos",
       "description": "Philippine Pesos"
+    },
+    {
+      "address": "80075ae9a6545eb1fc4473d3d7a7feab571fa1e444baf6816021af3a78d8bca3",
+      "decimals": 1,
+      "name": "BULLS",
+      "ticker": "BULLS",
+      "logoURI": "",
+      "project": "Philippine Pesos",
+      "description": "Bulls -- BUIDL in the bear, support open projects and improvements, move the ecosystem forward in good times and bad. Run with the Bulls or get gored!!"
     }
   ]
 }
