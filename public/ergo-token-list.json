@@ -515,7 +515,7 @@
       "decimals": 8,
       "name": "Philippine Pesos",
       "ticker": "PHP",
-      "logoURI": "",
+      "logoURI": "https://ergexplorer.com/images/tokens/php.png",
       "project": "Philippine Pesos",
       "description": "Philippine Pesos"
     },
