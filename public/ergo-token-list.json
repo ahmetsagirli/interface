@@ -14,6 +14,15 @@
   ],
   "tokens": [
     {
+      "address": "19b14267d2d8c4896da958c6eb56aa07d7a55ef5fd71dab87a6534af47cc2a5a",
+      "decimals": 2,
+      "name": "Rugged",
+      "ticker": "Rugged",
+      "logoURI": "https://ergexplorer.com/images/tokens/rugged.png",
+      "project": "Rugged",
+      "description": "THE ONLY OFFICIAL TRUMP MEME"
+    },
+    {
       "address": "15da50df7ff15f50f1603e18eead3de0c3dd91e20a8fdcaf714545fc7c00acc3",
       "decimals": 0,
       "name": "Official Trump",
