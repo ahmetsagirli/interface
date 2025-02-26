@@ -14,6 +14,15 @@
   ],
   "tokens": [
     {
+      "address": "050322548722d36f094e341f59ed93eb22118b363eb4efe8c461a52c4d93e2c3",
+      "decimals": 9,
+      "name": "rsBNB",
+      "ticker": "rsBNB",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png",
+      "project": "rsBNB",
+      "description": "rosen bridge wrapped BNB"
+    },
+    {
       "address": "19b14267d2d8c4896da958c6eb56aa07d7a55ef5fd71dab87a6534af47cc2a5a",
       "decimals": 2,
       "name": "Rugged",
