@@ -32,7 +32,7 @@ export const ergoUsdRatio$: Observable<any> = appTick$.pipe(
     ).pipe(
       catchError(() =>
         axios.get<OracleData>(
-          'https://oracle-core.ergopool.io/frontendData',
+          'https://erg-oracle-ergusd.spirepools.com/frontendData',
           {
             transformResponse: (data) => JSON.parse(JSON.parse(data)),
           },
