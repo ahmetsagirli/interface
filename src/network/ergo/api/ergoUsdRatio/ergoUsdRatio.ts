@@ -26,9 +26,12 @@ export interface OracleData {
 export const ergoUsdRatio$: Observable<any> = appTick$.pipe(
   switchMap(() =>
     from(
-      axios.get<OracleData>('https://erg-oracle-ergusd.spirepools.com/frontendData', {
-        transformResponse: (data) => JSON.parse(JSON.parse(data)),
-      }),
+      axios.get<OracleData>(
+        'https://erg-oracle-ergusd.spirepools.com/frontendData',
+        {
+          transformResponse: (data) => JSON.parse(JSON.parse(data)),
+        },
+      ),
     ).pipe(
       catchError(() =>
         axios.get<OracleData>(
