@@ -14,6 +14,15 @@
   ],
   "tokens": [
     {
+      "address": "6122f7289e7bb2df2de273e09d4b2756cda6aeb0f40438dc9d257688f45183ad",
+      "decimals": 0,
+      "name": "DexyGold",
+      "ticker": "DexyGold",
+      "logoURI": "https://ergexplorer.com/images/tokens/dexyusd.png",
+      "project": "DexyGold",
+      "description": "1 mg of gold, with peg maintained by Dexy algorithmic bank"
+    },
+    {
       "address": "a55b8735ed1a99e46c2c89f8994aacdf4b1109bdcf682f1e5b34479c6e392669",
       "decimals": 3,
       "name": "USE",
