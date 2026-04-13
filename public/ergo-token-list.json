@@ -23,6 +23,15 @@
       "description": "USE (DexyUSD)"
     },
     {
+      "address": "85763f3893ddd8f7f820473ed0dcc3c40aa8398ec6075a8990f250b9d270e9b3",
+      "decimals": 9,
+      "name": "CLB USE",
+      "ticker": "CLB USE",
+      "logoURI": "https://ergexplorer.com/images/tokens/clb.svg",
+      "project": "CLB USE",
+      "description": "Community Liquidity Bootstrap token - USE launch event"
+    },
+    {
       "address": "ae399fcb751e8e247d0da8179a2bcca2aa5119fff9c85721ffab9cdc9a3cb2dd",
       "decimals": 0,
       "name": "DORT",
