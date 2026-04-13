@@ -14,6 +14,24 @@
   ],
   "tokens": [
     {
+      "address": "a55b8735ed1a99e46c2c89f8994aacdf4b1109bdcf682f1e5b34479c6e392669",
+      "decimals": 3,
+      "name": "USE",
+      "ticker": "USE",
+      "logoURI": "https://ergexplorer.com/images/tokens/use.svg",
+      "project": "USE",
+      "description": "USE (DexyUSD)"
+    },
+    {
+      "address": "ae399fcb751e8e247d0da8179a2bcca2aa5119fff9c85721ffab9cdc9a3cb2dd",
+      "decimals": 0,
+      "name": "DORT",
+      "ticker": "DORT",
+      "logoURI": "https://ergexplorer.com/images/tokens/dort.svg",
+      "project": "DORT",
+      "description": "USD Oracle Reward Token (DORT)"
+    },
+    {
       "address": "a399dcd79a68eea82df4e9b30a11c61a96a671e767924c0cef2148fec9270df6",
       "decimals": 0,
       "name": "BURN",
@@ -389,7 +407,7 @@
       "decimals": 9,
       "name": "rsETH",
       "ticker": "rsETH",
-      "logoURI": "https://cryptologos.cc/logos/ethereum-eth-logo.png",
+      "logoURI": "https://assets.coingecko.com/coins/images/279/standard/ethereum.png",
       "project": "Rosen Bridge wrapped ETH",
       "description": "Rosen Bridge wrapped ETH"
     },
