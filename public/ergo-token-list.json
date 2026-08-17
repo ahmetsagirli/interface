@@ -14,6 +14,15 @@
   ],
   "tokens": [
     {
+      "address": "d4f0192622b440afc09711aa0545eacd04d78ad3f8a063523f451e10d3d0e6ef",
+      "decimals": 2,
+      "name": "MEOW",
+      "ticker": "MEOW",
+      "logoURI": "https://ergexplorer.com/images/tokens/mew.png",
+      "project": "MEOW",
+      "description": "MEOW — MEW Finance utility token. Re-mint replacing MEW"
+    },
+    {
       "address": "46700be1c5b9287acb6c7664e72883c967574db4332a3bfec59cece33b5a3177",
       "decimals": 0,
       "name": "CHEPUR",
