@@ -1,7 +1,6 @@
 import { Flex, useDevice } from '@ergolabs/ui-kit';
 import cn from 'classnames';
 import * as React from 'react';
-import { isDesktop } from 'react-device-detect';
 import styled from 'styled-components';
 
 import { device } from '../../../../common/constants/size';
@@ -10,7 +9,6 @@ import { AppLogo } from '../../AppLogo/AppLogo';
 import { OperationsHistory } from '../OperationsHistory/OperationsHistory';
 import { Analytics } from './Analytics/Analytics';
 import { BurgerMenu } from './BurgerMenu/BurgerMenu';
-import { ClaimSpfButton } from './ClaimSpfButton/ClaimSpfButton';
 import { ConnectWallet } from './ConnectWallet/ConnectWallet';
 import { Navigation } from './Navigation/Navigation';
 import { NetworkDropdown } from './NetworkDropdown/NetworkDropdown';
@@ -61,11 +59,6 @@ export const _Header: React.FC<HeaderProps> = ({ className, scrolledTop }) => {
           </IsErgo>
         </Flex>
         <Flex align="center" style={{ gap: '8px', marginLeft: 'auto' }}>
-          {!s && isDesktop && (
-            <IsErgo>
-              <ClaimSpfButton />
-            </IsErgo>
-          )}
           <NetworkDropdown />
           <ConnectWallet />
           {!s && <OperationsHistory />}

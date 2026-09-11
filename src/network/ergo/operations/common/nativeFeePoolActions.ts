@@ -1,8 +1,6 @@
 import {
   makeNativePoolActionsSelector,
-  makeSpfPoolActionsSelector,
   makeWrappedNativePoolActionsSelector,
-  makeWrappedSpfPoolActionsSelector,
 } from '@ergolabs/ergo-dex-sdk';
 
 import { mainnetTxAssembler } from '../../../../services/defaultTxAssembler';
@@ -16,15 +14,5 @@ export const nativeFeePoolActions = makeWrappedNativePoolActionsSelector(
 );
 
 export const ergoPayNativeFeePoolActions = makeNativePoolActionsSelector(
-  uiFeeParams$.getValue().address,
-);
-
-export const spfFeePoolActions = makeWrappedSpfPoolActionsSelector(
-  uiFeeParams$.getValue().address,
-  proverMediator,
-  mainnetTxAssembler,
-);
-
-export const ergoPaySpfFeePoolActions = makeSpfPoolActionsSelector(
   uiFeeParams$.getValue().address,
 );

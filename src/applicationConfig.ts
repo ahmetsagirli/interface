@@ -18,7 +18,6 @@ interface NetworkConfig {
   readonly analyticUrl?: string;
   readonly metadataUrl: string;
   readonly ergopayUrl?: string;
-  readonly spfFaucet?: string;
   readonly faucet?: string;
   readonly lowBalanceGuide?: string;
   readonly defaultTokenListUrl: string;
@@ -26,7 +25,6 @@ interface NetworkConfig {
 }
 
 interface ApplicationConfig {
-  readonly spfUsdRateUrl: string;
   readonly cookieDomain: string | undefined;
   readonly operationTimeoutTime: number;
   readonly reCaptchaKey: string;
@@ -54,7 +52,6 @@ interface ApplicationConfig {
 }
 
 export const applicationConfig: ApplicationConfig = {
-  spfUsdRateUrl: 'https://api.spectrum.fi/v1/price-tracking/spf/price',
   operationTimeoutTime: 60_000,
   cookieDomain: isProductionEnv() ? 'spectrum.fi' : undefined,
   reCaptchaKey: '6LfxqfMpAAAAAOO6oqZxadkZ-CfskD6ME16qcHmj',
@@ -64,7 +61,6 @@ export const applicationConfig: ApplicationConfig = {
       name: 'ergo',
       defaultTokenListUrl: 'https://www.ergdex.com/ergo-token-list.json',
       metadataUrl: 'https://spectrum.fi/logos/ergo',
-      spfFaucet: 'https://airdrop.spectrum.fi/v1/faucet/',
       networkUrl: 'https://api.ergoplatform.com',
       explorerUrl: 'https://ergexplorer.com/',
       analyticUrl: 'https://dex-api.sigmaspace.io/v1/',

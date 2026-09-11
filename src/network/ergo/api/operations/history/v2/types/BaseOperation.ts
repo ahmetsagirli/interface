@@ -13,7 +13,7 @@ import {
   Transaction,
 } from '../../../../../../../common/models/OperationV2';
 import { TxId } from '../../../../../../../common/types';
-import { feeAsset, networkAsset } from '../../../../networkAsset/networkAsset';
+import { networkAsset, spfAsset } from '../../../../networkAsset/networkAsset';
 
 export interface RawTransaction {
   readonly id: string;
@@ -79,7 +79,7 @@ export const mapRawBaseExecutedOperationToBaseExecutedOperation = (
             caption: 'Execution Fee',
             value:
               rawBO.feeType === 'spf'
-                ? new Currency(BigInt(rawBO.feeAmount), feeAsset)
+                ? new Currency(BigInt(rawBO.feeAmount), spfAsset)
                 : new Currency(BigInt(rawBO.feeAmount), networkAsset),
           },
         ]
@@ -104,7 +104,7 @@ export const mapRawSingleBaseExecutedOperationToSingleBaseExecutedOperation = (
             caption: 'Execution Fee',
             value:
               rawBO.feeType === 'spf'
-                ? new Currency(BigInt(rawBO.feeAmount), feeAsset)
+                ? new Currency(BigInt(rawBO.feeAmount), spfAsset)
                 : new Currency(BigInt(rawBO.feeAmount), networkAsset),
           },
         ]
