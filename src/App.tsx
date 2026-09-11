@@ -8,7 +8,6 @@ import { BehaviorSubject, first, mapTo, Observable, tap, zip } from 'rxjs';
 import { applicationConfig } from './applicationConfig';
 import { ApplicationRoutes, routesConfig } from './ApplicationRoutes';
 import { useObservable } from './common/hooks/useObservable';
-import { analyticsInitializer } from './common/initializers/analyticsInitializer';
 import { gaInitializer } from './common/initializers/gaInitializer';
 import { networkDomInitializer } from './common/initializers/networkDomInitializer';
 import { startAppTicks } from './common/streams/appTick';
@@ -33,7 +32,6 @@ const Application = () => {
 };
 
 const initializers: Observable<boolean>[] = [
-  analyticsInitializer(),
   networkDomInitializer(routesConfig),
   gaInitializer(),
 ];
