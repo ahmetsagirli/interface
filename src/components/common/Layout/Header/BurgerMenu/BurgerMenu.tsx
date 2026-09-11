@@ -1,14 +1,10 @@
 import {
   Button,
   Dropdown,
-  FileTextOutlined,
-  GithubOutlined,
   GlobalOutlined,
-  InfoCircleOutlined,
   LeftOutlined,
   Menu,
   Modal,
-  QuestionCircleOutlined,
   ReloadOutlined,
   RightOutlined,
 } from '@ergolabs/ui-kit';
@@ -65,26 +61,6 @@ const BurgerMenu = (): JSX.Element => {
 
   const menu = [
     {
-      title: t`About`,
-      icon: <InfoCircleOutlined />,
-      link: 'https://docs.spectrum.fi/docs/about-spectrumdex/intro',
-    },
-    {
-      title: t`How to use`,
-      icon: <QuestionCircleOutlined />,
-      link: 'https://docs.spectrum.fi/docs/user-guides/quick-start',
-    },
-    {
-      title: t`Docs`,
-      icon: <FileTextOutlined />,
-      link: 'https://docs.spectrum.fi',
-    },
-    {
-      title: 'GitHub',
-      icon: <GithubOutlined />,
-      link: 'https://github.com/spectrum-finance',
-    },
-    {
       title: t`Manual Tx Cancel`,
       icon: <ReloadOutlined />,
       onClick: () => {
@@ -120,14 +96,7 @@ const BurgerMenu = (): JSX.Element => {
         (item, index) =>
           item && (
             <OtherMenuItem key={index + 1} icon={item.icon}>
-              <a
-                href={item.link}
-                rel="noreferrer"
-                target={item.link ? '_blank' : ''}
-                onClick={item.onClick}
-              >
-                {item.title}
-              </a>
+              <a onClick={item.onClick}>{item.title}</a>
               {item.additional && item.additional}
             </OtherMenuItem>
           ),
