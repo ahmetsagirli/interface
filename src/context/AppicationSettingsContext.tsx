@@ -24,7 +24,7 @@ export type Settings = {
 
 export const DefaultSettings: Readonly<Settings> = {
   explorerUrl: '',
-  theme: 'dark',
+  theme: 'light',
   lang: DEFAULT_LOCALE,
   isSensitiveHidden: false,
 };
