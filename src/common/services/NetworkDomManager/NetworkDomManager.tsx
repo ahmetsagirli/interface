@@ -9,9 +9,11 @@ import {
   Navigate,
   Outlet,
 } from 'react-router-dom';
+import { of } from 'rxjs';
 
 import { RouteConfigExtended } from '../../../components/RouterTitle/RouteConfigExtended';
 import {
+  defaultNetwork,
   initializeNetwork,
   networksInitialized$,
   SELECTED_NETWORK_KEY,
@@ -20,10 +22,6 @@ import {
 import { Network } from '../../../network/common/Network';
 import { useObservable } from '../../hooks/useObservable';
 import { localStorageManager } from '../../utils/localStorageManager';
-import {
-  isSelectDefaultNetworkVisible$,
-  manuallySelectedNetwork$,
-} from './SelectDefaultNetwork/SelectDefaultNetwork';
 
 const handleAfterNetworkChange = (
   routesConfig: RouteConfigExtended[],
@@ -47,42 +45,35 @@ const init = (routesConfig: RouteConfigExtended[]): void => {
   )?.params?.network;
 
   initializeNetwork({
-    possibleName:
-      urlNetworkParameter === 'cardano_mainnet'
-        ? 'cardano'
-        : urlNetworkParameter,
+    possibleName: urlNetworkParameter,
     afterNetworkChange: handleAfterNetworkChange.bind(null, routesConfig),
-    getSelectedNetwork: () => {
-      isSelectDefaultNetworkVisible$.next(true);
-
-      return manuallySelectedNetwork$;
-    },
+    // Only Ergo is supported, so there is nothing to ask the user about.
+    getSelectedNetwork: () => of(defaultNetwork),
   }).subscribe();
 };
 
 const NetworkDomManagerOutlet: FC = () => {
   const { network } = useParams<{ network: string }>();
   const location = useLocation();
-  const cachedNetwork = localStorageManager.get<string>(SELECTED_NETWORK_KEY);
+  const cachedNetwork =
+    localStorageManager.get<string>(SELECTED_NETWORK_KEY) ||
+    defaultNetwork.name;
 
-  if (cachedNetwork && cachedNetwork === network) {
+  if (cachedNetwork === network) {
     return <Outlet />;
   }
-  if (network === 'cardano_mainnet' && cachedNetwork === 'cardano') {
-    return (
-      <Navigate
-        replace={true}
-        to={
-          location.pathname.replace('cardano_mainnet', 'cardano') +
-          location.search
-        }
-      />
-    );
-  }
-  if (cachedNetwork) {
-    return <Navigate replace={true} to={`/${cachedNetwork}`} />;
-  }
-  return <Navigate replace={true} to="/" />;
+  // Legacy links (e.g. /cardano/swap) keep the page and land on the
+  // supported network.
+  const restPathname = network
+    ? location.pathname.replace(`/${network}`, '')
+    : '';
+
+  return (
+    <Navigate
+      replace={true}
+      to={`/${cachedNetwork}${restPathname}${location.search}`}
+    />
+  );
 };
 
 const useNetworkTitle = (): string | undefined => {

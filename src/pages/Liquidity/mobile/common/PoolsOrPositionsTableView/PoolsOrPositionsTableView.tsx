@@ -39,9 +39,7 @@ export const PoolsOrPositionsTableView: FC<
           </Apr24InfoTooltip>
         }
       >
-        {(ammPool: AmmPool) => (
-          <AprColumn isAllContentTrigger ammPool={poolMapper(ammPool)} />
-        )}
+        {(ammPool: AmmPool) => <AprColumn ammPool={poolMapper(ammPool)} />}
       </TableView.Column>
       {children}
       <TableView.Column width="32px">

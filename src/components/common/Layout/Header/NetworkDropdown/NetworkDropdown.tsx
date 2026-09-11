@@ -31,6 +31,10 @@ export const NetworkDropdown: React.FC<NetworkDropdownProps> = ({
 }) => {
   const [selectedNetwork] = useSelectedNetwork();
 
+  if (visibleNetworks.length < 2) {
+    return null;
+  }
+
   const overlay = (
     <Menu
       className="network-dropdown__menu"

@@ -4,8 +4,7 @@ import styled from 'styled-components';
 
 import { useObservable } from '../../../../../common/hooks/useObservable';
 import { platformStats$ } from '../../../../../gateway/api/platformStats';
-import { formatToAda, formatToUSD } from '../../../../../services/number';
-import { IsCardano } from '../../../../IsCardano/IsCardano';
+import { formatToUSD } from '../../../../../services/number';
 import { IsErgo } from '../../../../IsErgo/IsErgo';
 import { AnalyticsSkeletonLoader } from './AnalyticsSkeletonLoader/AnalyticsSkeletonLoader.tsx';
 import { AnalyticTag } from './AnalyticTag/AnalyticTag';
@@ -29,9 +28,6 @@ const _Analytics: FC<AnalyticsProps> = ({ className }) => {
                   <IsErgo>
                     {formatToUSD(currentStats.tvl.toAmount(), 'abbr')}
                   </IsErgo>
-                  <IsCardano>
-                    {formatToAda(currentStats.tvl.toAmount(), 'abbr')}
-                  </IsCardano>
                 </>
               ) : (
                 <AnalyticsSkeletonLoader />
@@ -47,9 +43,6 @@ const _Analytics: FC<AnalyticsProps> = ({ className }) => {
                 <IsErgo>
                   {formatToUSD(currentStats.volume.toAmount(), 'abbr')}
                 </IsErgo>
-                <IsCardano>
-                  {formatToAda(currentStats.volume.toAmount(), 'abbr')}
-                </IsCardano>
               </>
             ) : (
               <AnalyticsSkeletonLoader />

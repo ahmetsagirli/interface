@@ -4,16 +4,11 @@ import { useNavigate } from 'react-router-dom';
 
 import { useObservable } from '../../../../../../../common/hooks/useObservable';
 import { AmmPool } from '../../../../../../../common/models/AmmPool';
-import { isDeprecatedPool } from '../../../../../../../common/utils/isDeprecatedPool';
 import { AssetPairTitle } from '../../../../../../../components/AssetPairTitle/AssetPairTitle';
-import { BoostedPoolTag } from '../../../../../../../components/BoostedPoolTag/BoostedPoolTag.tsx';
 import { DataTag } from '../../../../../../../components/common/DataTag/DataTag';
-import { DeprecatedPoolTag } from '../../../../../../../components/DeprecatedPoolTag/DeprecatedPoolTag';
 import { FarmsButton } from '../../../../../../../components/FarmsButton/FarmsButton';
-import { IsCardano } from '../../../../../../../components/IsCardano/IsCardano.tsx';
 import { IsErgo } from '../../../../../../../components/IsErgo/IsErgo';
 import { hasFarmsForPool } from '../../../../../../../network/ergo/lm/api/farms/farms';
-import { isSpecialBoostedPool } from '../../../../../../../utils/specialPools.ts';
 
 export interface PairColumnProps {
   readonly ammPool: AmmPool;
@@ -62,19 +57,9 @@ export const PairColumn: FC<PairColumnProps> = ({ ammPool }) => {
           />
         </Flex.Item>
       )}
-      {/*TODO: IGNORE FOR CARDANO*/}
       <IsErgo>
         {hasFarmForPool && <FarmsButton onClick={handleFarmsButtonClick} />}
       </IsErgo>
-      {isSpecialBoostedPool(ammPool.id) && !s && (
-        <IsCardano>
-          <BoostedPoolTag asset={ammPool.y.asset} />
-        </IsCardano>
-      )}
-
-      <IsCardano>
-        {isDeprecatedPool(ammPool.id) && <DeprecatedPoolTag />}
-      </IsCardano>
     </Flex>
   );
 };

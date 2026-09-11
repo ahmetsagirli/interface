@@ -3,25 +3,15 @@ import { t, Trans } from '@lingui/macro';
 import { ElementLocation, ElementName } from '@spectrumlabs/analytics';
 import { FC, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  BehaviorSubject,
-  combineLatest,
-  first,
-  map,
-  of,
-  skip,
-  switchMap,
-} from 'rxjs';
+import { BehaviorSubject, first, map, skip, switchMap } from 'rxjs';
 
 import {
   useObservable,
   useSubscription,
 } from '../../common/hooks/useObservable';
 import { AssetInfo } from '../../common/models/AssetInfo';
-import { Balance } from '../../common/models/Balance';
 import { Currency } from '../../common/models/Currency';
 import { Ratio } from '../../common/models/Ratio';
-import { DefaultTokenList } from '../../common/services/DefaultTokenList';
 import { LiquidityPercentInput } from '../../components/AddLiquidityForm/LiquidityPercentInput/LiquidityPercentInput';
 import { AssetControlFormItem } from '../../components/common/TokenControl/AssetControl';
 import { AssetSelectFormItem } from '../../components/common/TokenControl/AssetSelect/AssetSelect';
@@ -41,62 +31,22 @@ import { useNetworkAsset } from '../../gateway/api/networkAsset';
 import { createPool } from '../../gateway/api/operations/createPool';
 import { useHandleCreatePoolMaxButtonClick } from '../../gateway/api/useHandleCreatePoolMaxButtonClick';
 import { useCreatePoolValidators } from '../../gateway/api/validationFees';
-import {
-  selectedNetwork$,
-  useSelectedNetwork,
-} from '../../gateway/common/network';
+import { useSelectedNetwork } from '../../gateway/common/network';
 import { operationsSettings$ } from '../../gateway/widgets/operationsSettings';
 import { useGuardV2 } from '../../hooks/useGuard.ts';
-import {
-  defaultTokenList$,
-  DefaultTokenListItem,
-} from '../../network/cardano/api/common/defaultTokenList';
 import { CreatePoolFormModel } from './CreatePoolFormModel';
 import { FeeSelector } from './FeeSelector/FeeSelector';
 import { InitialPriceInput } from './InitialPrice/InitialPriceInput';
 import { Overlay } from './Overlay/Overlay';
 
-const xAssets$ = selectedNetwork$.pipe(
-  switchMap((network) => {
-    if (network.name === 'ergo') {
-      return assetBalance$.pipe(
-        map((balance) => balance.values().map((balance) => balance.asset)),
-      );
-    }
-    return of([network.networkAsset]);
-  }),
+const xAssets$ = assetBalance$.pipe(
+  map((balance) => balance.values().map((balance) => balance.asset)),
 );
 
-const getYAssets = (xId?: string) => {
-  return selectedNetwork$.pipe(
-    switchMap((network) => {
-      if (network.name === 'ergo') {
-        return xId
-          ? xAssets$.pipe(map((assets) => assets.filter((a) => a.id !== xId)))
-          : xAssets$;
-      }
-      return combineLatest<[Balance, DefaultTokenList<DefaultTokenListItem>]>([
-        assetBalance$,
-        defaultTokenList$,
-      ]).pipe(
-        map(
-          ([balance, defaultTokenList]: [
-            Balance,
-            DefaultTokenList<DefaultTokenListItem>,
-          ]) =>
-            balance
-              .values()
-              .map((balance) => balance.asset)
-              .filter(
-                (a) =>
-                  a.id !== network.networkAsset.id &&
-                  defaultTokenList.tokensMap.has(a.id),
-              ),
-        ),
-      );
-    }),
-  );
-};
+const getYAssets = (xId?: string) =>
+  xId
+    ? xAssets$.pipe(map((assets) => assets.filter((a) => a.id !== xId)))
+    : xAssets$;
 
 export const CreatePool: FC = () => {
   const [selectedNetwork] = useSelectedNetwork();

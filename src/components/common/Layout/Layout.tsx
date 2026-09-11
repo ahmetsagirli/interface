@@ -10,13 +10,10 @@ import {
 } from 'rxjs';
 import styled from 'styled-components';
 
-import { applicationConfig } from '../../../applicationConfig';
 import { device } from '../../../common/constants/size';
 import { useSubscription } from '../../../common/hooks/useObservable';
-import { useSelectedNetwork } from '../../../gateway/common/network';
 import { openCookiePolicy } from '../../../services/notifications/CookiePolicy/CookiePolicy';
 import { NetworkHeight } from '../../NetworkHeight/NetworkHeight';
-import { CardanoUpdate } from './CardanoUpdate/CardanoUpdate';
 import { FooterNavigation } from './FooterNavigation/FooterNavigation';
 import { Header } from './Header/Header';
 import { NeedUpdateModal } from './NeedUpdateModal/NeedUpdateModal';
@@ -49,7 +46,6 @@ const _Layout: FC<PropsWithChildren<{ className?: string }>> = ({
   children,
   className,
 }) => {
-  const [network] = useSelectedNetwork();
   const ref = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
   const [scrolledTop, setScrolledTop] = useState(true);
@@ -76,22 +72,16 @@ const _Layout: FC<PropsWithChildren<{ className?: string }>> = ({
 
   return (
     <div ref={ref} className={className}>
-      {applicationConfig.cardanoUpdate && network.name !== 'ergo' ? (
-        <CardanoUpdate />
-      ) : (
-        <>
-          <Header scrolledTop={scrolledTop} />
-          <MainContainer
-            style={{ paddingBottom: footerHeight ? footerHeight + 8 : 80 }}
-          >
-            {children}
-          </MainContainer>
-          <footer>
-            <NetworkHeight />
-          </footer>
-          <FooterNavigation ref={footerRef} />
-        </>
-      )}
+      <Header scrolledTop={scrolledTop} />
+      <MainContainer
+        style={{ paddingBottom: footerHeight ? footerHeight + 8 : 80 }}
+      >
+        {children}
+      </MainContainer>
+      <footer>
+        <NetworkHeight />
+      </footer>
+      <FooterNavigation ref={footerRef} />
     </div>
   );
 };

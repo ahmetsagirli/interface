@@ -12,7 +12,6 @@ import { useNavigate } from 'react-router-dom';
 import { useObservable } from '../../../../../../common/hooks/useObservable';
 import { AmmPool } from '../../../../../../common/models/AmmPool';
 import { isDeprecatedPool } from '../../../../../../common/utils/isDeprecatedPool';
-import { normalizeAvailableLp } from '../../../../../../common/utils/normalizeAvailableLp';
 import { redeem } from '../../../../../../gateway/api/operations/redeem';
 import { getPositionByAmmPoolId } from '../../../../../../gateway/api/positions';
 
@@ -40,8 +39,7 @@ export const ActionsColumn: FC<ActionsColumnProps> = ({ ammPool }) => {
           if (!position) {
             return;
           }
-          const [availableLp, availableX, availableY] =
-            normalizeAvailableLp(position);
+          const { availableLp, availableX, availableY } = position;
           redeem(
             position.pool,
             {

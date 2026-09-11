@@ -21,7 +21,6 @@ import {
 import { useSelectedNetwork } from '../../../../gateway/common/network';
 import { Wallet } from '../../../../network/common/Wallet';
 import { ErgoPayTabPaneContent } from '../../../../network/ergo/widgets/ErgoPayModal/ErgoPayTabPaneContent/ErgoPayTabPaneContent';
-import { IsCardano } from '../../../IsCardano/IsCardano';
 import { IsErgo } from '../../../IsErgo/IsErgo';
 import { ProtocolDisclaimerAlert } from './ProtocolDisclaimerAlert/ProtocolDisclaimerAlert';
 
@@ -152,7 +151,6 @@ const ChooseWalletModal: React.FC<ChooseWalletModalProps> = ({
             ) : null}
           </Tabs>
         </IsErgo>
-        <IsCardano>{walletTab}</IsCardano>
       </Modal.Content>
     </>
   );

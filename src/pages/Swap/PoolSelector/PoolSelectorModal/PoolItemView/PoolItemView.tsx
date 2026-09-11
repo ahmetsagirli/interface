@@ -5,9 +5,8 @@ import styled, { css } from 'styled-components';
 import { AmmPool } from '../../../../../common/models/AmmPool';
 import { AssetPairTitle } from '../../../../../components/AssetPairTitle/AssetPairTitle';
 import { DataTag } from '../../../../../components/common/DataTag/DataTag';
-import { IsCardano } from '../../../../../components/IsCardano/IsCardano';
 import { IsErgo } from '../../../../../components/IsErgo/IsErgo';
-import { formatToAda, formatToUSD } from '../../../../../services/number';
+import { formatToUSD } from '../../../../../services/number';
 
 interface PoolItemViewProps {
   readonly pool: AmmPool;
@@ -79,9 +78,6 @@ const _PoolItemView: FC<PoolItemViewProps> = ({
               pool?.tvl ? (
                 <>
                   <IsErgo>{formatToUSD(pool.tvl.toAmount(), 'abbr')}</IsErgo>
-                  <IsCardano>
-                    {formatToAda(pool.tvl.toAmount(), 'abbr')}
-                  </IsCardano>
                 </>
               ) : (
                 '–––'

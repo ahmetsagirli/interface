@@ -12,16 +12,13 @@ import { useApplicationSettings } from './context';
 import { AddLiquidity } from './pages/AddLiquidity/AddLiquidity';
 import { CreatePool } from './pages/CreatePool/CreatePool';
 import { Farms } from './pages/Farms/Farms';
-import { IspoRewards } from './pages/IspoRewards/IspoRewards.tsx';
 import { Liquidity } from './pages/Liquidity/Liquidity';
 import { LockLiquidity } from './pages/LockLiquidity/LockLiquidity';
 import { PoolOverview } from './pages/PoolOverview/PoolOverview';
 import { RelockLiquidity } from './pages/RelockLiquidity/RelockLiquidity';
 import { RemoveLiquidity } from './pages/RemoveLiquidity/RemoveLiquidity';
-import { Rewards } from './pages/Rewards/Rewards';
 import { Swap } from './pages/Swap/Swap';
 import { WithdrawalLiquidity } from './pages/WithdrawalLiquidity/WithdrawalLiquidity';
-import { isPreLbspTimeGap } from './utils/lbsp.ts';
 
 export const routesConfig: RouteConfigExtended[] = [
   {
@@ -38,11 +35,7 @@ export const routesConfig: RouteConfigExtended[] = [
         children: [
           {
             path: '',
-            element: isPreLbspTimeGap() ? (
-              <Navigate to="liquidity" />
-            ) : (
-              <Navigate to="swap" />
-            ),
+            element: <Navigate to="swap" />,
           },
           {
             title: 'Swap',
@@ -106,21 +99,6 @@ export const routesConfig: RouteConfigExtended[] = [
                     element: <PoolOverview />,
                   },
                 ],
-              },
-            ],
-          },
-          {
-            title: 'Rewards',
-            path: 'rewards',
-            children: [
-              {
-                path: '',
-                element: <Rewards />,
-              },
-              {
-                title: 'ISPO Rewards',
-                path: 'ispo',
-                element: <IspoRewards />,
               },
             ],
           },

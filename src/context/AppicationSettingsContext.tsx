@@ -20,7 +20,6 @@ export type Settings = {
   theme: Theme;
   lang: SupportedLocale;
   isSensitiveHidden: boolean;
-  isCardanoDisclaimerModalConfirmed: boolean;
 };
 
 export const DefaultSettings: Readonly<Settings> = {
@@ -28,7 +27,6 @@ export const DefaultSettings: Readonly<Settings> = {
   theme: 'dark',
   lang: DEFAULT_LOCALE,
   isSensitiveHidden: false,
-  isCardanoDisclaimerModalConfirmed: false,
 };
 
 function noop() {

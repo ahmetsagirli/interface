@@ -11,8 +11,6 @@ import { useObservable } from './common/hooks/useObservable';
 import { analyticsInitializer } from './common/initializers/analyticsInitializer';
 import { gaInitializer } from './common/initializers/gaInitializer';
 import { networkDomInitializer } from './common/initializers/networkDomInitializer';
-import { sentryInitializer } from './common/initializers/sentryInitializer';
-import { SelectDefaultNetwork } from './common/services/NetworkDomManager/SelectDefaultNetwork/SelectDefaultNetwork';
 import { startAppTicks } from './common/streams/appTick';
 import { Glow } from './components/common/Layout/Glow/Glow';
 import { ErrorEventProvider } from './components/ErrorBoundary/ErrorEventProvider';
@@ -35,7 +33,6 @@ const Application = () => {
 };
 
 const initializers: Observable<boolean>[] = [
-  sentryInitializer(),
   analyticsInitializer(),
   networkDomInitializer(routesConfig),
   gaInitializer(),
@@ -78,9 +75,7 @@ export const ApplicationInitializer: React.FC = () => {
         <BrowserRouter>
           <LanguageProvider>
             <Glow />
-            <SelectDefaultNetwork>
-              {isAppInitialized && <Application />}
-            </SelectDefaultNetwork>
+            {isAppInitialized && <Application />}
           </LanguageProvider>
         </BrowserRouter>
       </ErrorEventProvider>

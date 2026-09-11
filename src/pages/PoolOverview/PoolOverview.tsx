@@ -11,8 +11,6 @@ import { Page } from '../../components/Page/Page';
 import { getPositionByAmmPoolId } from '../../gateway/api/positions';
 import { useSelectedNetwork } from '../../gateway/common/network';
 import { useGuardV2 } from '../../hooks/useGuard';
-import { isCardano } from '../../utils/network.ts';
-import { isSubject, subjectToId } from '../../utils/subjectToId.ts';
 import { getAmmPoolConfidenceAnalyticByAmmPoolId } from './AmmPoolConfidenceAnalytic';
 import { LockLiquidity } from './LockLiquidity/LockLiquidity';
 import { PoolInfoView } from './PoolInfoView/PoolInfoView';
@@ -22,10 +20,7 @@ export const PoolOverview: React.FC = () => {
   const navigate = useNavigate();
   const [selectedNetwork] = useSelectedNetwork();
   const { poolId } = useParamsStrict<{ poolId: PoolId }>();
-  const normalizedPoolId =
-    selectedNetwork.name === 'cardano' && isSubject(poolId)
-      ? subjectToId(poolId)
-      : poolId;
+  const normalizedPoolId = poolId;
 
   const [position, loading] = useObservable(
     getPositionByAmmPoolId(normalizedPoolId),
@@ -43,17 +38,12 @@ export const PoolOverview: React.FC = () => {
       navigate('../../../liquidity');
     },
   );
-  useGuardV2(
-    () => selectedNetwork.name === 'cardano' && isSubject(poolId),
-    () =>
-      navigate(`../../../liquidity/${subjectToId(poolId)}`, { replace: true }),
-  );
 
   return (
     <Page
       transparent
       title={t`Pool overview`}
-      maxWidth={isCardano() ? 590 : 984}
+      maxWidth={984}
       withBackButton
       backTo="../../../liquidity"
     >

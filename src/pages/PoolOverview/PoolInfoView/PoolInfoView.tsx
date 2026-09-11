@@ -20,7 +20,6 @@ import { ReactComponent as WithdrawalIcon } from '../../../assets/icons/withdraw
 import { useObservable } from '../../../common/hooks/useObservable';
 import { Position } from '../../../common/models/Position';
 import { isDeprecatedPool } from '../../../common/utils/isDeprecatedPool';
-import { normalizeAvailableLp } from '../../../common/utils/normalizeAvailableLp.ts';
 import { ConnectWalletButton } from '../../../components/common/ConnectWalletButton/ConnectWalletButton';
 import { DeprecatedPoolTag } from '../../../components/DeprecatedPoolTag/DeprecatedPoolTag';
 import { FarmsButton } from '../../../components/FarmsButton/FarmsButton';
@@ -214,8 +213,8 @@ export const PoolInfoView: FC<PoolInfoProps> = ({ position }) => {
                     isDeprecatedPool(position.pool.id) ||
                     position.pool.unverified
                       ? () => {
-                          const [availableLp, availableX, availableY] =
-                            normalizeAvailableLp(position);
+                          const { availableLp, availableX, availableY } =
+                            position;
 
                           redeem(
                             position.pool,

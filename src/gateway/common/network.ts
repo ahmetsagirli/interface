@@ -14,7 +14,6 @@ import {
 
 import { useObservable } from '../../common/hooks/useObservable';
 import { localStorageManager } from '../../common/utils/localStorageManager';
-import { cardanoMainnet, cardanoPreview } from '../../network/cardano/cardano';
 import { Network } from '../../network/common/Network';
 import { ergoNetwork } from '../../network/ergo/ergo';
 
@@ -27,17 +26,11 @@ const updateSelectedNetwork$ = new BehaviorSubject<
 let afterNetworkChange: ((n: Network<any, any>) => void) | undefined =
   undefined;
 
-export const networks: Network<any, any, any>[] = [
-  ergoNetwork,
-  cardanoPreview,
-  cardanoMainnet,
-];
+export const networks: Network<any, any, any>[] = [ergoNetwork];
 
-export const visibleNetworks: Network<any, any, any>[] = [
-  ergoNetwork,
-  cardanoMainnet,
-  cardanoPreview,
-];
+export const visibleNetworks: Network<any, any, any>[] = [ergoNetwork];
+
+export const defaultNetwork: Network<any, any, any> = ergoNetwork;
 
 export const isNetworkExists = (networkName?: string): boolean =>
   networks.some((n) => n.name === networkName);

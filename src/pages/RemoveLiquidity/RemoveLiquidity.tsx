@@ -11,7 +11,6 @@ import {
 } from '../../common/hooks/useObservable';
 import { useParamsStrict } from '../../common/hooks/useParamsStrict';
 import { Position } from '../../common/models/Position';
-import { normalizeAvailableLp } from '../../common/utils/normalizeAvailableLp.ts';
 import { FormPairSection } from '../../components/common/FormView/FormPairSection/FormPairSection';
 import { FormSlider } from '../../components/common/FormView/FormSlider/FormSlider';
 import { IsErgo } from '../../components/IsErgo/IsErgo';
@@ -22,20 +21,14 @@ import { SubmitButton } from '../../components/SubmitButton/SubmitButton';
 import { fireOperationAnalyticsEvent } from '../../gateway/analytics/fireOperationAnalyticsEvent';
 import { redeem } from '../../gateway/api/operations/redeem';
 import { getPositionByAmmPoolId } from '../../gateway/api/positions';
-import { useSelectedNetwork } from '../../gateway/common/network.ts';
 import { operationsSettings$ } from '../../gateway/widgets/operationsSettings';
 import { useGuardV2 } from '../../hooks/useGuard';
 import { mapToRedeemAnalyticsProps } from '../../utils/analytics/mapper';
-import { isSubject, subjectToId } from '../../utils/subjectToId.ts';
 import { RemoveLiquidityFormModel } from './RemoveLiquidityFormModel';
 
 export const RemoveLiquidity: FC = () => {
   const { poolId } = useParamsStrict<{ poolId: PoolId }>();
-  const [selectedNetwork] = useSelectedNetwork();
-  const normalizedPoolId =
-    poolId && selectedNetwork.name === 'cardano' && isSubject(poolId)
-      ? subjectToId(poolId)
-      : poolId;
+  const normalizedPoolId = poolId;
   const navigate = useNavigate();
   const [position, loading] = useObservable(
     getPositionByAmmPoolId(normalizedPoolId),
@@ -56,11 +49,6 @@ export const RemoveLiquidity: FC = () => {
         { replace: true },
       ),
   );
-  useGuardV2(
-    () => isSubject(poolId) && selectedNetwork.name === 'cardano',
-    () =>
-      navigate(`../../${subjectToId(poolId as any)}/remove`, { replace: true }),
-  );
 
   const [formValue] = useObservable(form.valueChangesWithSilent$);
 
@@ -70,8 +58,7 @@ export const RemoveLiquidity: FC = () => {
       if (!position) {
         return;
       }
-      const [availableLp, availableX, availableY] =
-        normalizeAvailableLp(position);
+      const { availableLp, availableX, availableY } = position;
 
       form.patchValue({
         xAmount: percent === 100 ? availableX : availableX.percent(percent),
