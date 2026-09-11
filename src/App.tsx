@@ -8,7 +8,6 @@ import { BehaviorSubject, first, mapTo, Observable, tap, zip } from 'rxjs';
 import { applicationConfig } from './applicationConfig';
 import { ApplicationRoutes, routesConfig } from './ApplicationRoutes';
 import { useObservable } from './common/hooks/useObservable';
-import { gaInitializer } from './common/initializers/gaInitializer';
 import { networkDomInitializer } from './common/initializers/networkDomInitializer';
 import { startAppTicks } from './common/streams/appTick';
 import { Glow } from './components/common/Layout/Glow/Glow';
@@ -33,7 +32,6 @@ const Application = () => {
 
 const initializers: Observable<boolean>[] = [
   networkDomInitializer(routesConfig),
-  gaInitializer(),
 ];
 
 const isAppInitialized$ = new BehaviorSubject(false);
