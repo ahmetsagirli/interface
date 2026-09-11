@@ -16,6 +16,10 @@ const useNativeFeeSwapValidators = (): OperationValidator<SwapFormModel>[] => {
   const insufficientAssetForFeeValidator: OperationValidator<
     Required<SwapFormModel>
   > = ({ value: { fromAmount } }, balance) => {
+    if (!fromAmount) {
+      return undefined;
+    }
+
     const totalFees = minerFee.plus(maxExFee).plus(MinBoxValue);
 
     const totalFeesWithAmount = fromAmount.isAssetEquals(networkAsset)

@@ -117,7 +117,7 @@
       "decimals": 7,
       "name": "$Bass Token",
       "ticker": "$bass",
-      "logoURI": "https://cloudflare-ipfs.com/ipfs/bafybeifjq7aaleq2eg4o4vhqsg2zjow6pkbb3upb7vpz6g24r777ikh5ua",
+      "logoURI": "https://ipfs.io/ipfs/bafybeifjq7aaleq2eg4o4vhqsg2zjow6pkbb3upb7vpz6g24r777ikh5ua",
       "project": "$Bass",
       "description": "Memecoin of the Ergo ecosystem"
     },

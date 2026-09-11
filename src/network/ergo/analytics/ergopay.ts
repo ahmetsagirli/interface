@@ -2,6 +2,7 @@ import axios from 'axios';
 import {
   distinctUntilKeyChanged,
   exhaustMap,
+  filter,
   first,
   map,
   mapTo,
@@ -24,6 +25,7 @@ interface TxForMark {
 
 const ergoPayAnalytics$: Observable<TxForMark[]> = settings$.pipe(
   switchMap((settings) => appTick$.pipe(mapTo(settings))),
+  filter(({ address }) => !!address),
   exhaustMap(({ address }) =>
     axios.get<TxForMark[]>(
       `${applicationConfig.networksSettings.ergo.ergopayUrl}/unsignedTx/${address}/waiting_for_mark`,
