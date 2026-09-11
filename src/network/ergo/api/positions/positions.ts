@@ -9,9 +9,7 @@ import {
 } from 'rxjs';
 
 import { Currency } from '../../../../common/models/Currency.ts';
-import { FarmStatus } from '../../../../common/models/Farm';
 import { Position } from '../../../../common/models/Position';
-import { farms$ } from '../../lm/api/farms/farms';
 import { allAmmPools$ } from '../ammPools/ammPools';
 import { lpBalance$ } from '../balance/lpBalance';
 import { tokenLocksGroupedByLpAsset$ } from '../common/tokenLocks';
@@ -22,7 +20,6 @@ export const positions$ = combineLatest([
   lpBalance$,
   tokenLocksGroupedByLpAsset$,
   networkContext$,
-  farms$,
 ]).pipe(
   debounceTime(300),
   map(
@@ -31,25 +28,15 @@ export const positions$ = combineLatest([
       lpWalletBalance,
       tokenLocksGroupedByLpAsset,
       networkContext,
-      farms,
     ]) => {
       return ammPools
-        .map((ammPool) => ({
-          ammPool,
-          farms: farms.filter(
-            (f) =>
-              f.ammPool.id === ammPool.id &&
-              (f.status !== FarmStatus.Finished || f.yourStakeLq.isPositive()),
-          ),
-        }))
         .filter(
-          ({ ammPool, farms }) =>
+          (ammPool) =>
             lpWalletBalance.get(ammPool.lp.asset).isPositive() ||
-            tokenLocksGroupedByLpAsset[ammPool.lp.asset.id]?.length > 0 ||
-            farms.some((f) => f.yourStakeLq.isPositive()),
+            tokenLocksGroupedByLpAsset[ammPool.lp.asset.id]?.length > 0,
         )
         .map(
-          ({ ammPool, farms }) =>
+          (ammPool) =>
             new Position(
               ammPool,
               lpWalletBalance.get(ammPool.lp.asset),
@@ -70,7 +57,6 @@ export const positions$ = combineLatest([
                   ),
                 }),
               })) || [],
-              farms,
             ),
         );
     },

@@ -4,8 +4,6 @@ import { CSSProperties, FC, useEffect, useState } from 'react';
 import { useMatch, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { useSelectedNetwork } from '../../../../../gateway/common/network';
-
 interface NavigationProps {
   textCenter?: boolean;
   className?: string;
@@ -14,7 +12,6 @@ interface NavigationProps {
 
 const _Navigation: FC<NavigationProps> = ({ className, style }) => {
   const navigate = useNavigate();
-  const [network] = useSelectedNetwork();
   const matchPage = useMatch<'page', string>({
     path: ':network/:page',
     end: false,
@@ -38,7 +35,6 @@ const _Navigation: FC<NavigationProps> = ({ className, style }) => {
     >
       <Tabs.TabPane tab={t`Swap`} key="swap" />
       <Tabs.TabPane tab={t`Liquidity`} key="liquidity" />
-      {network.name === 'ergo' && <Tabs.TabPane tab={t`Farms`} key="farm" />}
     </Tabs>
   );
 };

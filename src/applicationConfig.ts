@@ -44,8 +44,6 @@ interface ApplicationConfig {
   readonly hiddenAssets: string[];
   readonly blacklistedPools: string[];
   readonly blacklistedHistoryAssets: string[];
-  readonly farmsWhiteList: string[];
-  readonly testFarms: string[];
   readonly operationsRestrictions: OperationRestriction[];
   readonly requestRetryCount: number;
   readonly deprecatedPools: string[];
@@ -123,23 +121,6 @@ export const applicationConfig: ApplicationConfig = {
     '4e497db00769f6402580c351c092ec6ae0306f08575c7a9c719267c84049c840',
     '61a579c46d92f2718576fc9839a2a1983f172e889ec234af8504b5bbf10edd89',
     'e24d17f85ac406827b0436a648f3960d8965e677700949ff28ab0ca9a37dd50e',
-  ],
-  farmsWhiteList: [
-    '1b3d37d78650dd8527fa02f8783d9b98490df3b464dd44af0e0593ceb4717702',
-    'af629d8e63d08a9770bc543f807bdb82dcda942d4e21d506771f975dc2b3fd3a',
-    '24e9f9a3e0aa89092d8690941900323dea2ee3603ca7368c0c35175259df6930',
-    'badf2fabbacf4f8d9efa7549a6ca06bbf02bbd737e1770d7e7df5a8a26a40cfc',
-    '563394b82c5a518351fd6994a5f115b0165b8f96e05d460453ba21837091b7dd',
-    '4136eba32fe50118ce0c556b83f85c0460da975489a3a5f3d0450fef0ab40dd5',
-    '53472966344861e6dc21f59517199672a6486b6ebe57aa211cad03afdd6b816f',
-    '5f22cb20453e0856acb4b40e4ee2430e4b73a5abe4e72a0b2235a0adfb48a2be',
-    'feb3a5c4b30fbe82ae316465c343169fcf3c0db6bc821902be4928270289f6eb',
-    '82737701cc3e083ba3644ffd372c543198a74510e0a45e3bc21744c3185abef4',
-    '11c4f52ebeb0e1d291f541a095edd0c101fffaf421c6a6744321b9e4934b724d',
-    '25f0defafdc6eb7a9942d26ca8e909f620221bbd53d42df648b7366dbb3dde71',
-  ],
-  testFarms: [
-    '69eff57ea62b13c58e5668e3fbc9927fdb2dffb1c692261f98728a665b2f8abb',
   ],
   deprecatedPools: [],
   operationsRestrictions: [

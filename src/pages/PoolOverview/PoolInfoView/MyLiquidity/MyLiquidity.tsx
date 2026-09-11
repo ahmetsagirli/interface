@@ -75,8 +75,7 @@ export const MyLiquidity: FC<MyLiquidityProps> = ({ position }) => {
               }
             />
           </InlineGrid>
-          {(position.lockedLp.isPositive() ||
-            position.stakedLp.isPositive()) && (
+          {position.lockedLp.isPositive() && (
             <Flex align="center" col={s}>
               {position.lockedLp.isPositive() && (
                 <Flex.Item
@@ -127,59 +126,6 @@ export const MyLiquidity: FC<MyLiquidityProps> = ({ position }) => {
                           <SensitiveContent>
                             <Typography.Body strong size="small">
                               {position.lockedY.toString()}
-                            </Typography.Body>
-                          </SensitiveContent>
-                        }
-                      />
-                    </InlineGrid>
-                  </Box>
-                </Flex.Item>
-              )}
-              {position.stakedLp.isPositive() && (
-                <Flex.Item flex={1} width={s ? '100%' : undefined}>
-                  <Box
-                    glass
-                    style={{ background: 'var(--spectrum-box-bg-hover-glass)' }}
-                    borderRadius="s"
-                    padding={[1, 2]}
-                  >
-                    <InlineGrid gap={1}>
-                      <InlineGrid.Item
-                        title={
-                          <Typography.Body size="small" strong>
-                            <Trans>Staked in farms</Trans>
-                          </Typography.Body>
-                        }
-                        value={''}
-                      />
-                      <InlineGrid.Item
-                        title={
-                          <AssetTitle
-                            size="extraSmall"
-                            asset={position.pool.x.asset}
-                            level="small-strong"
-                          />
-                        }
-                        value={
-                          <SensitiveContent>
-                            <Typography.Body strong size="small">
-                              {position.stakedX.toString()}
-                            </Typography.Body>
-                          </SensitiveContent>
-                        }
-                      />
-                      <InlineGrid.Item
-                        title={
-                          <AssetTitle
-                            size="extraSmall"
-                            asset={position.pool.y.asset}
-                            level="small-strong"
-                          />
-                        }
-                        value={
-                          <SensitiveContent>
-                            <Typography.Body strong size="small">
-                              {position.stakedY.toString()}
                             </Typography.Body>
                           </SensitiveContent>
                         }

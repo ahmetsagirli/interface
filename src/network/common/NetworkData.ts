@@ -7,7 +7,6 @@ import { AssetInfo } from '../../common/models/AssetInfo';
 import { AssetLock } from '../../common/models/AssetLock';
 import { Balance } from '../../common/models/Balance';
 import { Currency } from '../../common/models/Currency';
-import { Farm } from '../../common/models/Farm';
 import { Operation } from '../../common/models/Operation';
 import { OperationItem } from '../../common/models/OperationV2';
 import { PoolChartData } from '../../common/models/PoolChartData';
@@ -32,7 +31,6 @@ export interface NetworkData<W extends Wallet> {
   readonly lpBalance$: Observable<Balance>;
   readonly locks$: Observable<AssetLock[]>;
   readonly ammPools$: Observable<AmmPool[]>;
-  readonly farmPools$?: Observable<Farm[]>;
   readonly displayedAmmPools$: Observable<AmmPool[]>;
   readonly defaultAssets$: Observable<AssetInfo[]>;
   readonly getDefaultAssetsFor: (assetId: string) => Observable<AssetInfo[]>;

@@ -43,9 +43,6 @@ import {
   walletState$,
 } from './api/wallet/wallet';
 import { initialize, initialized$ } from './initialized';
-import { farms$ } from './lm/api/farms/farms';
-import { lmDeposit } from './lm/operations/lmDeposit/lmDeposit';
-import { lmRedeem } from './lm/operations/lmRedeem/lmRedeem';
 import { createPool } from './operations/createPool/createPool';
 import { useCreatePoolValidators } from './operations/createPool/useCreatePoolValidators';
 import { deposit } from './operations/deposit/deposit';
@@ -121,8 +118,6 @@ export const ergoNetwork: Network<
   deposit,
   redeem,
   refund,
-  lmDeposit,
-  lmRedeem,
   createPool,
 
   exploreAddress,
@@ -150,6 +145,4 @@ export const ergoNetwork: Network<
   pendingOperationsCount$,
   queuedOperation$,
   hasNeedRefundOperations$: of(false),
-
-  farmPools$: farms$,
 };

@@ -3,17 +3,10 @@ import { Searchable } from '../utils/Searchable';
 import { AmmPool } from './AmmPool';
 import { AssetLock, AssetLockParams, AssetLockStatus } from './AssetLock';
 import { Currency } from './Currency';
-import { Farm } from './Farm';
 
 export class Position implements Searchable {
   static noop(ammPool: AmmPool): Position {
-    return new Position(
-      ammPool,
-      new Currency(0n, ammPool.lp.asset),
-      true,
-      [],
-      [],
-    );
+    return new Position(ammPool, new Currency(0n, ammPool.lp.asset), true, []);
   }
 
   readonly locks: AssetLock[];
@@ -39,15 +32,15 @@ export class Position implements Searchable {
   }
 
   get totalX(): Currency {
-    return this.availableX.plus(this.lockedX).plus(this.stakedX);
+    return this.availableX.plus(this.lockedX);
   }
 
   get totalY(): Currency {
-    return this.availableY.plus(this.lockedY).plus(this.stakedY);
+    return this.availableY.plus(this.lockedY);
   }
 
   get totalLp(): Currency {
-    return this.availableLp.plus(this.lockedLp).plus(this.stakedLp);
+    return this.availableLp.plus(this.lockedLp);
   }
 
   match(term?: string): boolean {
@@ -77,18 +70,11 @@ export class Position implements Searchable {
 
   readonly withdrawableLockedLp: Currency;
 
-  readonly stakedX: Currency;
-
-  readonly stakedY: Currency;
-
-  readonly stakedLp: Currency;
-
   constructor(
     public pool: AmmPool,
     public availableLp: Currency,
     public empty = false,
     tokenLocks: AssetLockParams[],
-    farms: Farm[],
   ) {
     this.locks = tokenLocks.map((tl) => new AssetLock(this, tl));
     const {
@@ -135,12 +121,5 @@ export class Position implements Searchable {
     this.withdrawableLockedLp = withdrawableLockedLp;
     this.withdrawableLockedY = withdrawableLockedY;
     this.withdrawableLockedX = withdrawableLockedX;
-
-    this.stakedLp = farms.reduce<Currency>(
-      (sum, f) => sum.plus(f.yourStakeLq),
-      new Currency(0n, this.pool.lp.asset),
-    );
-    this.stakedX = this.pool.shares(this.stakedLp)[0];
-    this.stakedY = this.pool.shares(this.stakedLp)[1];
   }
 }

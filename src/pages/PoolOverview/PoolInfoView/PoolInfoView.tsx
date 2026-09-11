@@ -17,16 +17,13 @@ import { useNavigate } from 'react-router-dom';
 import { applicationConfig } from '../../../applicationConfig';
 import { ReactComponent as RelockIcon } from '../../../assets/icons/relock-icon.svg';
 import { ReactComponent as WithdrawalIcon } from '../../../assets/icons/withdrawal-icon.svg';
-import { useObservable } from '../../../common/hooks/useObservable';
 import { Position } from '../../../common/models/Position';
 import { isDeprecatedPool } from '../../../common/utils/isDeprecatedPool';
 import { ConnectWalletButton } from '../../../components/common/ConnectWalletButton/ConnectWalletButton';
 import { DeprecatedPoolTag } from '../../../components/DeprecatedPoolTag/DeprecatedPoolTag';
-import { FarmsButton } from '../../../components/FarmsButton/FarmsButton';
 import { IsErgo } from '../../../components/IsErgo/IsErgo.tsx';
 import { PageHeader } from '../../../components/Page/PageHeader/PageHeader';
 import { redeem } from '../../../gateway/api/operations/redeem';
-import { hasFarmsForPool } from '../../../network/ergo/lm/api/farms/farms';
 import { MyLiquidity } from './MyLiquidity/MyLiquidity';
 import { PoolFeeTag } from './PoolFeeTag/PoolFeeTag';
 import { TotalLiquidity } from './TotalLiquidity/TotalLiquidity';
@@ -38,10 +35,6 @@ export interface PoolInfoProps {
 export const PoolInfoView: FC<PoolInfoProps> = ({ position }) => {
   const { valBySize, s } = useDevice();
   const navigate = useNavigate();
-  const [hasFarmForPool] = useObservable(hasFarmsForPool(position.pool.id), []);
-
-  const handleFarmsButtonClick = () =>
-    navigate(`../../../farm?searchString=${position?.pool.id}`);
 
   const handleLockLiquidity = () => navigate(`lock`);
 
@@ -117,9 +110,6 @@ export const PoolInfoView: FC<PoolInfoProps> = ({ position }) => {
                   <Flex.Item marginRight={2}>
                     <DeprecatedPoolTag />
                   </Flex.Item>
-                )}
-                {hasFarmForPool && (
-                  <FarmsButton onClick={handleFarmsButtonClick} />
                 )}
               </Flex.Item>
               {!isDeprecatedPool(position.pool.id) &&

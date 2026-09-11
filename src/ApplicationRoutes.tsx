@@ -11,7 +11,6 @@ import { RouterTitle } from './components/RouterTitle/RouterTitle';
 import { useApplicationSettings } from './context';
 import { AddLiquidity } from './pages/AddLiquidity/AddLiquidity';
 import { CreatePool } from './pages/CreatePool/CreatePool';
-import { Farms } from './pages/Farms/Farms';
 import { Liquidity } from './pages/Liquidity/Liquidity';
 import { LockLiquidity } from './pages/LockLiquidity/LockLiquidity';
 import { PoolOverview } from './pages/PoolOverview/PoolOverview';
@@ -41,11 +40,6 @@ export const routesConfig: RouteConfigExtended[] = [
             title: 'Swap',
             path: 'swap',
             element: <Swap />,
-          },
-          {
-            title: 'Farm',
-            path: 'farm',
-            element: <Farms />,
           },
           {
             path: 'liquidity',

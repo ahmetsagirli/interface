@@ -37,9 +37,6 @@ export enum Operation {
   RELOCK_LIQUIDITY,
   WITHDRAWAL_LIQUIDITY,
   REQUEST_TESTNET_ASSET,
-  CREATE_FARM,
-  STAKE_LIQUIDITY_FARM,
-  WITHDRAWAL_LIQUIDITY_FARM,
 }
 
 export interface ModalChainingPayload {
@@ -73,14 +70,6 @@ const getDescriptionByData = (
       return xAsset && yAsset
         ? t`Removing liquidity ${xAsset.toCurrencyString()} and ${yAsset.toCurrencyString()}`
         : '';
-    case Operation.STAKE:
-      return xAsset && yAsset
-        ? t`Staking ${xAsset.toCurrencyString()} and ${yAsset.toCurrencyString()} in the farm`
-        : '';
-    case Operation.UNSTAKE:
-      return xAsset && yAsset
-        ? t`Unstaking ${xAsset.toCurrencyString()} and ${yAsset.toCurrencyString()} from the farm`
-        : '';
     case Operation.SWAP:
     case Operation.ERGOPAY:
       return xAsset && yAsset
@@ -96,16 +85,6 @@ const getDescriptionByData = (
       return t`Relocking ${assetLock?.x.toCurrencyString()} and ${assetLock?.y.toCurrencyString()} (${
         assetLock && assetLock.lp.toString() + ' LP-assets'
       })`;
-    case Operation.CREATE_FARM:
-      return t`Creating Farm`;
-    case Operation.STAKE_LIQUIDITY_FARM:
-      return xAsset && yAsset
-        ? t`Stake ${xAsset.toCurrencyString()} and ${yAsset.toCurrencyString()} liquidity`
-        : '';
-    case Operation.WITHDRAWAL_LIQUIDITY_FARM:
-      return xAsset && yAsset
-        ? t`Withdraw ${xAsset.toCurrencyString()} and ${yAsset.toCurrencyString()}  liquidity`
-        : '';
   }
 };
 
