@@ -21,18 +21,14 @@ import {
   MIN_SLIPPAGE,
 } from '../../common/constants/settings';
 import { useSubscription } from '../../common/hooks/useObservable';
-import { AssetInfo } from '../../common/models/AssetInfo';
 import { Currency } from '../../common/models/Currency';
 import { InfoTooltip } from '../InfoTooltip/InfoTooltip';
-import { IsErgo } from '../IsErgo/IsErgo';
-import { FeeCurrencySelector } from './FeeCurrencySelector/FeeCurrencySelector';
 import { NitroInput } from './NitroInput/NitroInput';
 import { SlippageInput } from './SlippageInput/SlippageInput';
 
 interface SettingsModel {
   readonly slippage: number;
   readonly nitro: number;
-  readonly executionFeeAsset: AssetInfo;
 }
 
 const slippageCheck: CheckFn<number> = (value) =>
@@ -55,13 +51,10 @@ export interface OperationSettingsProps {
   readonly maxExFee: Currency;
   readonly setSlippage: (slippage: number) => void;
   readonly setNitro: (nitro: number) => void;
-  readonly setExecutionFeeAsset: (executionFee: AssetInfo) => void;
-  readonly executionFeeAsset: AssetInfo;
   readonly nitro: number;
   readonly slippage: number;
   readonly hideNitro?: boolean;
   readonly hideSlippage?: boolean;
-  readonly feeAssets?: AssetInfo[];
 }
 
 export const OperationSettings: FC<OperationSettingsProps> = ({
@@ -69,13 +62,10 @@ export const OperationSettings: FC<OperationSettingsProps> = ({
   maxExFee,
   setSlippage,
   setNitro,
-  setExecutionFeeAsset,
-  executionFeeAsset,
   nitro,
   slippage,
   hideNitro,
   hideSlippage,
-  feeAssets,
 }) => {
   const warningMessages: Messages<SettingsModel> = {
     slippage: {
@@ -104,7 +94,6 @@ export const OperationSettings: FC<OperationSettingsProps> = ({
       [slippageCheck, slippageTxFailCheck],
     ),
     nitro: useForm.ctrl(nitro, [nitroCheck]),
-    executionFeeAsset: executionFeeAsset,
   });
 
   const handlePopoverShown = (visible: boolean) => {
@@ -138,16 +127,6 @@ export const OperationSettings: FC<OperationSettingsProps> = ({
     ),
     (nitro) => setNitro(nitro),
     [slippage, nitro],
-  );
-
-  useSubscription(
-    form.controls.executionFeeAsset.valueChanges$.pipe(skip(1)),
-    (executionFeeAsset) => {
-      if (executionFeeAsset) {
-        setExecutionFeeAsset(executionFeeAsset);
-      }
-    },
-    [executionFeeAsset],
   );
 
   const Setting: JSX.Element = (
@@ -190,31 +169,6 @@ export const OperationSettings: FC<OperationSettingsProps> = ({
                 </Form.Item>
               </Flex.Item>
             </>
-          )}
-          {feeAssets?.length && (
-            <IsErgo>
-              <Flex.Item marginBottom={1}>
-                <InfoTooltip
-                  width={200}
-                  content={t`The execution fee is paid to off-chain validators who execute DEX orders`}
-                >
-                  <Typography.Body strong>
-                    <Trans>Execution fee</Trans>
-                  </Typography.Body>
-                </InfoTooltip>
-              </Flex.Item>
-              <Flex.Item marginBottom={hideNitro ? 0 : 2}>
-                <Form.Item name="executionFeeAsset">
-                  {({ onChange, value }) => (
-                    <FeeCurrencySelector
-                      assets={feeAssets}
-                      value={value}
-                      onChange={onChange}
-                    />
-                  )}
-                </Form.Item>
-              </Flex.Item>
-            </IsErgo>
           )}
           {hideNitro ? null : (
             <>

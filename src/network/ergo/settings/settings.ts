@@ -17,7 +17,6 @@ import {
   getUnusedAddresses,
   getUsedAddresses,
 } from '../api/addresses/addresses';
-import { networkAsset } from '../api/networkAsset/networkAsset';
 
 const SETTINGS_KEY = 'ergo-settings';
 
@@ -31,7 +30,6 @@ export const defaultErgoSettings: ErgoSettings = {
   minerFee: defaultMinerFee,
   nitro: MIN_NITRO,
   slippage: defaultSlippage,
-  executionFeeAsset: networkAsset,
   pk: undefined,
   address: undefined,
   ergopay: false,
@@ -93,9 +91,6 @@ export const initializeSettings = (): void => {
         address: newSelectedAddress,
         newHistory: true,
         pk: publicKeyFromAddress(newSelectedAddress),
-        executionFeeAsset:
-          currentSettings.executionFeeAsset ||
-          defaultErgoSettings.executionFeeAsset,
       });
     });
 };

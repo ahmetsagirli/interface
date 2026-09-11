@@ -2,7 +2,6 @@ import { FeeCurrency, fireAnalyticsEvent } from '@spectrumlabs/analytics';
 import { AnalyticsEvents } from '@spectrumlabs/analytics';
 import { combineLatest, first, from, switchMap } from 'rxjs';
 
-import { SPF_TOKEN_ERGO_ID } from '../../common/constants/spf';
 import { Network } from '../../network/common/Network';
 export interface EventProducerContext {
   readonly network: Network<any, any>;
@@ -37,12 +36,7 @@ export const fireOperationAnalyticsEvent = <T extends keyof AnalyticsEvents>(
       ),
     )
     .subscribe(([settings, selectedNetwork]) => {
-      const ergTicker =
-        settings?.executionFeeAsset?.id === SPF_TOKEN_ERGO_ID
-          ? 'ergo-spf'
-          : 'ergo-erg';
-
-      const feeCurrency: EventProducerContext['feeCurrency'] = ergTicker;
+      const feeCurrency: EventProducerContext['feeCurrency'] = 'ergo-erg';
       const eventPropsFactory = rest[0];
       const props = (
         eventPropsFactory
