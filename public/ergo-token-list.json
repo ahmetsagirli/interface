@@ -14,6 +14,15 @@
   ],
   "tokens": [
     {
+      "address": "581d7df25808881b2b8b9b4e03e2f637c46a94f74a69a5da36434125bacb4e08",
+      "decimals": 8,
+      "name": "rsFIRO",
+      "ticker": "rsFIRO",
+      "logoURI": "https://ergexplorer.com/images/tokens/rsfiro.svg",
+      "project": "rsFIRO",
+      "description": "rosen bridge wrapped FIRO"
+    },
+    {
       "address": "d4f0192622b440afc09711aa0545eacd04d78ad3f8a063523f451e10d3d0e6ef",
       "decimals": 2,
       "name": "MEOW",
