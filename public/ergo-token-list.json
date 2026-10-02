@@ -14,6 +14,15 @@
   ],
   "tokens": [
     {
+      "address": "c1980d829988229516430a47a5eca376060b6ce859616db0936e78ab25cb6de7",
+      "decimals": 9,
+      "name": "LIT",
+      "ticker": "LIT",
+      "logoURI": "https://ergexplorer.com/images/tokens/lit.png",
+      "project": "LIT",
+      "description": "Lithos Protocol Token"
+    },
+    {
       "address": "581d7df25808881b2b8b9b4e03e2f637c46a94f74a69a5da36434125bacb4e08",
       "decimals": 8,
       "name": "rsFIRO",
